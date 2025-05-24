@@ -1,0 +1,98 @@
+@import "tailwindcss";
+
+@theme {
+	--font-bangla: "Anek Bangla", sans-serif;
+	--breakpoint-xs: 29rem;
+	--sectionGap: clamp(1rem, 5%, 6rem);
+}
+
+h5,
+#brand {
+	@apply text-[clamp(1rem,calc(1vw+0.5rem),2rem)];
+}
+h6,
+header nav li a {
+	@apply text-[clamp(.9rem,calc(1vw+0.20rem),1.5rem)];
+}
+
+/* Lenis */
+html.lenis,
+html.lenis body {
+	height: auto;
+}
+.lenis:not(.lenis-autoToggle).lenis-stopped {
+	overflow: clip;
+}
+.lenis.lenis-smooth [data-lenis-prevent] {
+	overscroll-behavior: contain;
+}
+.lenis.lenis-smooth iframe {
+	pointer-events: none;
+}
+.lenis.lenis-autoToggle {
+	transition-property: overflow;
+	transition-duration: 1ms;
+	transition-behavior: allow-discrete;
+}
+
+/* Main Menu */
+header nav .menu-item {
+	@apply relative lg:flex lg:items-center;
+}
+header nav .menu-item a {
+	@apply font-medium block px-(--sectionGap) py-2.5 border-b-1 border-b-[#ffffff2a] lg:flex lg:items-center lg:gap-0.5 lg:px-2.5 lg:py-1.5 lg:border-0;
+}
+header nav .menu-item:last-child a {
+	@apply border-0;
+}
+header nav .menu-item:nth-last-child(2) {
+	@apply ms-auto;
+}
+header nav ul > .menu-item:last-child a {
+	@apply lg:border-1 lg:border-white lg:rounded-full;
+}
+header nav .menu-item.current-menu-item a {
+	@apply text-zinc-900 bg-white lg:text-zinc-900 lg:bg-white lg:rounded-full;
+}
+header nav .menu-item.current-menu-item a img {
+	@apply inline-block;
+}
+header nav ul > .menu-item.current-menu-item a {
+	@apply lg:text-white lg:bg-transparent;
+}
+
+/* Fonts */
+@font-face {
+	font-family: "Anek Bangla";
+	font-style: normal;
+	font-weight: 100 800;
+	font-stretch: 100%;
+	font-display: swap;
+	src: url(../assets/fonts/anek-bangla-bengali.woff2) format("woff2");
+	unicode-range: U+0951-0952, U+0964-0965, U+0980-09FE, U+1CD0, U+1CD2,
+		U+1CD5-1CD6, U+1CD8, U+1CE1, U+1CEA, U+1CED, U+1CF2, U+1CF5-1CF7,
+		U+200C-200D, U+20B9, U+25CC, U+A8F1;
+}
+@font-face {
+	font-family: "Anek Bangla";
+	font-style: normal;
+	font-weight: 100 800;
+	font-stretch: 100%;
+	font-display: swap;
+	src: url(../assets/fonts/anek-bangla-latin-ext.woff2) format("woff2");
+	unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7,
+		U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F,
+		U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F,
+		U+A720-A7FF;
+}
+@font-face {
+	font-family: "Anek Bangla";
+	font-style: normal;
+	font-weight: 100 800;
+	font-stretch: 100%;
+	font-display: swap;
+	src: url(../assets/fonts/anek-bangla-latin.woff2) format("woff2");
+	unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA,
+		U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191,
+		U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}

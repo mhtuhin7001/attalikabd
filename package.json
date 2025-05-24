@@ -1,0 +1,21 @@
+{
+	"name": "attalikabd",
+	"version": "1.0.0",
+	"main": "index.js",
+	"scripts": {
+		"start": "vite",
+		"build": "tailwindcss -i /css/style.css -o style.css --minify",
+		"dev": "vite build"
+	},
+	"keywords": [],
+	"author": "",
+	"license": "ISC",
+	"description": "",
+	"dependencies": {
+		"@tailwindcss/postcss": "^4.1.7",
+		"autoprefixer": "^10.4.21",
+		"postcss": "^8.5.3",
+		"tailwindcss": "^4.1.7",
+		"vite": "^6.3.5"
+	}
+}
