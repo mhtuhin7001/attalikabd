@@ -40,6 +40,9 @@ document.addEventListener("DOMContentLoaded", () => {
 		}
 		gsap.to(menuBg, { width, duration: 0.5 });
 	});
+	// Menu BG Height
+	const header = document.querySelector("header").offsetHeight + 15;
+	menuBg.style.height = `${header}px`;
 
 	// Menu Offcanvas
 	if (window.innerWidth <= 1023) {
@@ -71,6 +74,7 @@ document.addEventListener("DOMContentLoaded", () => {
 	if (window.innerWidth >= 1024) {
 		gsapTl.from("#menu-bg", {
 			y: -80,
+			overwrite: "auto",
 			opacity: 0,
 			duration: 0.4,
 		});
@@ -116,7 +120,7 @@ document.addEventListener("DOMContentLoaded", () => {
 		"-=0.1"
 	);
 	gsapTl.from("#hero-sub-title", {
-		width: "31px",
+		width: "30px",
 		duration: 0.4,
 	});
 });
