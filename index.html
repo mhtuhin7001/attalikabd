@@ -28,7 +28,7 @@
 				class="fixed w-full flex justify-end top-0 -right-full z-50 lg:relative lg:bg-inherit lg:right-0"
 			>
 				<div
-					class="w-full h-dvh flex flex-col bg-zinc-900 px-1.5 py-4 xs:w-[80%] lg:size-full lg:bg-inherit"
+					class="w-full max-w-md h-dvh flex flex-col bg-zinc-900 px-1.5 py-4 lg:size-full lg:bg-inherit"
 				>
 					<button
 						id="menu-close"
@@ -388,14 +388,133 @@
 		</header>
 
 		<!-- Hero -->
-		<section id="hero-home" class="h-dvh bg-black">
+		<section id="hero-home" class="relative h-dvh bg-zinc-900">
+			<span
+				id="hero-cursor"
+				class="hidden absolute size-24 text-sm font-medium text-white bg-zinc-900 place-items-center rounded-full whitespace-nowrap opacity-0 scale-0 -translate-1/2 lg:inline-grid"
+			>
+				সম্পূর্ণ ভিডিও
+			</span>
 			<video
 				autoplay
 				muted
 				loop
 				src="assets/media/hero.mp4"
+				id="hero-video"
 				class="size-full object-cover"
 			></video>
+			<div class="absolute text-center top-1/2 left-1/2 -translate-1/2">
+				<h6
+					id="hero-sub-title"
+					class="overflow-hidden inline-block text-white border-1 border-white mb-2 px-1.5 py-0.5 rounded-full whitespace-nowrap cursor-pointer transition-colors duration-300 hover:bg-zinc-900 hover:border-zinc-900 lg:mb-4"
+				>
+					<svg
+						xmlns="http://www.w3.org/2000/svg"
+						viewBox="0 0 24 24"
+						fill="currentColor"
+						class="size-5 inline-block me-0.5"
+					>
+						<path
+							fill-rule="evenodd"
+							d="M2.25 12c0-5.385 4.365-9.75 9.75-9.75s9.75 4.365 9.75 9.75-4.365 9.75-9.75 9.75S2.25 17.385 2.25 12Zm13.36-1.814a.75.75 0 1 0-1.22-.872l-3.236 4.53L9.53 12.22a.75.75 0 0 0-1.06 1.06l2.25 2.25a.75.75 0 0 0 1.14-.094l3.75-5.25Z"
+							clip-rule="evenodd"
+						/>
+					</svg>
+					সুখী থাকুন আপন ঠিকানায়
+				</h6>
+				<h1
+					id="hero-title"
+					class="font-bold text-white pointer-events-none"
+				>
+					আপনার স্বপ্নের ঠিকানা <br />
+					এখন হাতের নাগালে
+				</h1>
+				<form
+					action=""
+					class="relative flex w-full bg-white mx-auto mt-4 rounded-full xl:mt-7 2xl:w-2/3"
+				>
+					<input
+						type="text"
+						name="search"
+						class="w-full px-3 py-2 rounded-full focus:outline-0 lg:px-4 xl:py-3"
+						placeholder="খুঁজুন আপনার স্বপ্ন..."
+					/>
+					<button
+						type="submit"
+						class="absolute h-10/12 aspect-square text-white inline-grid place-items-center bg-zinc-900 rounded-full top-1/2 right-1 -translate-y-1/2 cursor-pointer"
+					>
+						<svg
+							xmlns="http://www.w3.org/2000/svg"
+							fill="none"
+							viewBox="0 0 24 24"
+							stroke-width="1.5"
+							stroke="currentColor"
+							class="size-5"
+						>
+							<path
+								stroke-linecap="round"
+								stroke-linejoin="round"
+								d="m21 21-5.197-5.197m0 0A7.5 7.5 0 1 0 5.196 5.196a7.5 7.5 0 0 0 10.607 10.607Z"
+							/>
+						</svg>
+					</button>
+				</form>
+			</div>
+			<div>
+				<span
+					id="close-cursor"
+					class="hidden absolute text-white mix-blend-difference inset-0 pointer-events-none z-51"
+					>ভিডিও বন্ধ</span
+				>
+				<video
+					muted
+					src="assets/media/hero-full.mp4"
+					id="hero-full-video"
+					class="absolute size-0 bg-black m-auto inset-0 -rotate-45 cursor-pointer z-50"
+				></video>
+				<div>
+					<div
+						id="video-controls"
+						class="absolute overflow-hidden w-0 mx-auto flex justify-between items-center right-0 bottom-10 left-0 mix-blend-difference z-51"
+					>
+						<svg
+							xmlns="http://www.w3.org/2000/svg"
+							viewBox="0 0 24 24"
+							fill="currentColor"
+							id="video-play"
+							class="size-5 fill-white cursor-pointer"
+						>
+							<path
+								fill-rule="evenodd"
+								d="M4.5 5.653c0-1.427 1.529-2.33 2.779-1.643l11.54 6.347c1.295.712 1.295 2.573 0 3.286L7.28 19.99c-1.25.687-2.779-.217-2.779-1.643V5.653Z"
+								clip-rule="evenodd"
+							/>
+						</svg>
+						<input
+							type="range"
+							id="video-progress-bar"
+							class="basis-full h-1 mx-2.5 bg-gray-400 accent-white cursor-pointer"
+							value="0"
+							min="0"
+							step="0.1"
+						/>
+						<svg
+							xmlns="http://www.w3.org/2000/svg"
+							viewBox="0 0 24 24"
+							fill="currentColor"
+							id="video-unmute"
+							class="size-5 fill-white cursor-pointer"
+						>
+							<path
+								d="M13.5 4.06c0-1.336-1.616-2.005-2.56-1.06l-4.5 4.5H4.508c-1.141 0-2.318.664-2.66 1.905A9.76 9.76 0 0 0 1.5 12c0 .898.121 1.768.35 2.595.341 1.24 1.518 1.905 2.659 1.905h1.93l4.5 4.5c.945.945 2.561.276 2.561-1.06V4.06ZM18.584 5.106a.75.75 0 0 1 1.06 0c3.808 3.807 3.808 9.98 0 13.788a.75.75 0 0 1-1.06-1.06 8.25 8.25 0 0 0 0-11.668.75.75 0 0 1 0-1.06Z"
+							/>
+							<path
+								d="M15.932 7.757a.75.75 0 0 1 1.061 0 6 6 0 0 1 0 8.486.75.75 0 0 1-1.06-1.061 4.5 4.5 0 0 0 0-6.364.75.75 0 0 1 0-1.06Z"
+							/>
+						</svg>
+					</div>
+				</div>
+			</div>
 		</section>
 
 		<section id="content">
@@ -653,6 +772,8 @@
 		<script src="js/gsap.min.js"></script>
 		<!-- Gsap ScrollTrigger Script -->
 		<script src="js/ScrollTrigger.min.js"></script>
+		<!-- Gsap SplitText Script -->
+		<script src="js/SplitText.min.js"></script>
 		<!-- Main Script -->
 		<script src="js/script.js"></script>
 	</body>
