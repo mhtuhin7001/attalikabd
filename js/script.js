@@ -165,7 +165,8 @@ document.addEventListener("DOMContentLoaded", () => {
 	});
 	// Open Video
 	heroVid.addEventListener("click", () => {
-		document.body.classList.add("overflow-hidden");
+		document.documentElement.classList.add("overflow-hidden");
+		document.body.classList.add("overflow-hidden", "h-dvh!");
 		closeVid.classList.add("lg:block");
 		gsapTl.play();
 		heroFulVid.muted = false;
@@ -184,7 +185,8 @@ document.addEventListener("DOMContentLoaded", () => {
 		heroFulVid.pause();
 		heroFulVid.muted = true;
 		gsapTl.reverse();
-		document.body.classList.remove("overflow-hidden");
+		document.body.classList.remove("overflow-hidden", "h-dvh!");
+		document.documentElement.classList.remove("overflow-hidden");
 		closeVid.classList.remove("lg:block");
 	});
 
@@ -222,4 +224,68 @@ document.addEventListener("DOMContentLoaded", () => {
 			muteUnmute.innerHTML = `<path d="M13.5 4.06c0-1.336-1.616-2.005-2.56-1.06l-4.5 4.5H4.508c-1.141 0-2.318.664-2.66 1.905A9.76 9.76 0 0 0 1.5 12c0 .898.121 1.768.35 2.595.341 1.24 1.518 1.905 2.659 1.905h1.93l4.5 4.5c.945.945 2.561.276 2.561-1.06V4.06ZM17.78 9.22a.75.75 0 1 0-1.06 1.06L18.44 12l-1.72 1.72a.75.75 0 1 0 1.06 1.06l1.72-1.72 1.72 1.72a.75.75 0 1 0 1.06-1.06L20.56 12l1.72-1.72a.75.75 0 1 0-1.06-1.06l-1.72 1.72-1.72-1.72Z" />`;
 		}
 	});
+});
+
+// Property Filtering
+document.addEventListener("DOMContentLoaded", () => {
+	const btnList = document.getElementById("filter-btns");
+	const btn = btnList.querySelectorAll("#filter-btns button");
+	const property = document.querySelectorAll(".property");
+	let conferenceIndex = 0;
+	const itemsPerPage = 6; // Number of items to show at a time
+	let currentFilter = "all"; // Track current filter
+	property.forEach((conference) => {
+		conference.style.viewTransitionName = `conf-${++conferenceIndex}`;
+	});
+	btn.forEach((button) => {
+		button.addEventListener("click", (e) => {
+			let confCategory = e.target.getAttribute("data-filter");
+			currentFilter = confCategory; // Update current filter
+			if (!document.startViewTransition) {
+				updateActiveButton(e.target);
+				filterEvents(confCategory);
+				showFirstItems();
+			} else {
+				document.startViewTransition(() => {
+					updateActiveButton(e.target);
+					filterEvents(confCategory);
+					showFirstItems();
+				});
+			}
+		});
+	});
+	function updateActiveButton(newButton) {
+		btnList
+			.querySelector(".border-1", ".border-zinc-900")
+			.classList.remove("border-1", "border-zinc-900");
+		newButton.classList.add("border-1", "border-zinc-900");
+	}
+	function filterEvents(filter) {
+		property.forEach((conference) => {
+			let eventCategory = conference.getAttribute("data-category");
+			if (filter === "all" || filter === eventCategory) {
+				conference.removeAttribute("hidden");
+			} else {
+				conference.setAttribute("hidden", "");
+			}
+		});
+	}
+	function showFirstItems() {
+		let visibleItems = 0;
+		property.forEach((conference, index) => {
+			if (!conference.hasAttribute("hidden")) {
+				if (visibleItems < itemsPerPage) {
+					conference.style.display = ""; // Show the item
+					visibleItems++;
+				} else {
+					conference.style.display = "none"; // Hide the item
+				}
+			} else {
+				conference.style.display = "none"; // Keep filtered items hidden
+			}
+		});
+	}
+	// Initialize by showing first 6 items
+	filterEvents(currentFilter);
+	showFirstItems();
 });

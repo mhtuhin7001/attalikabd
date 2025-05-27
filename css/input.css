@@ -11,12 +11,16 @@ h1 {
 h2 {
 	@apply text-[clamp(1.2rem,calc(2.5vw+.5rem),4.5rem)] leading-[clamp(1.7rem,calc(2.5vw+1rem),5rem)];
 }
+h4 {
+	@apply text-[clamp(1rem,calc(1.5vw+0.5rem),2.75rem)] leading-[clamp(1.25rem,calc(1.75vw+0.5rem),3rem)];
+}
 h5,
 #brand {
 	@apply text-[clamp(1rem,calc(1vw+0.5rem),2rem)];
 }
 h6,
-header nav li a {
+header nav li a,
+#filter-btns button {
 	@apply text-[clamp(.9rem,calc(1vw+0.20rem),1.5rem)];
 }
 
