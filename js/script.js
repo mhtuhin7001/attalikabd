@@ -312,3 +312,49 @@ document.addEventListener("DOMContentLoaded", () => {
 	filterEvents(currentFilter);
 	showFirstItems();
 });
+
+// Initialize Slider
+document.addEventListener("DOMContentLoaded", () => {
+	function initializeSwiper(selector) {
+		return new Swiper(selector, {
+			freeMode: true,
+			grabCursor: true,
+			loop: true,
+			speed: 7000,
+			spaceBetween: 30,
+			autoplay: {
+				delay: 0,
+				pauseOnMouseEnter: true,
+			},
+			breakpoints: {
+				0: {
+					slidesPerView: 1,
+				},
+				640: {
+					slidesPerView: 2,
+				},
+				1280: {
+					slidesPerView: 3,
+				},
+				1536: {
+					slidesPerView: 4,
+					spaceBetween: 40,
+				},
+			},
+		});
+	}
+
+	// Initialize Sliders
+	initializeSwiper(".citySlider");
+});
+
+// Hover Play Video
+document.addEventListener("DOMContentLoaded", () => {
+	document.querySelectorAll(".citySlider video").forEach((video) => {
+		video.addEventListener("mouseenter", () => {
+			video.currentTime = 0;
+			video.play();
+		});
+		video.addEventListener("mouseleave", () => video.pause());
+	});
+});
