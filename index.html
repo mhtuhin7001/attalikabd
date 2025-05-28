@@ -526,27 +526,79 @@
 			<div>
 				<div
 					id="filter-btns"
-					class="sticky h-[clamp(3.5rem,calc(5vw+1.1rem),7rem)] bg-white flex justify-center items-center top-0 z-52"
+					class="sticky h-[clamp(3.5rem,calc(5vw+1.1rem),7rem)] bg-white flex flex-wrap justify-center items-center top-0 z-52"
 				>
 					<button
 						type="button"
 						data-filter="all"
-						class="uppercase px-3.5 py-1 border-1 border-zinc-900 rounded-full cursor-pointer"
+						class="uppercase flex items-center gap-1 px-3.5 py-1 border-1 border-zinc-900 rounded-full cursor-pointer"
 					>
 						সবগুলো
 					</button>
 					<button
 						type="button"
 						data-filter="land"
-						class="uppercase px-4 py-1.5 rounded-full cursor-pointer"
+						class="uppercase flex items-center gap-1 px-4 py-1.5 rounded-full cursor-pointer"
 					>
+						<svg
+							xmlns="http://www.w3.org/2000/svg"
+							viewBox="0 0 24 24"
+							fill="none"
+							stroke="currentColor"
+							stroke-linecap="round"
+							stroke-linejoin="round"
+							stroke-width="2"
+						>
+							<path d="M12 8L18 5L12 2v10" />
+							<path
+								d="M8 11.99L2.5 15.13a1 1 0 0 0 0 1.74l8.5 4.86a2 2 0 0 0 2 0l8.5-4.86a1 1 0 0 0 0-1.74L16 12"
+							/>
+							<path d="M6.49 12.85l11.02 6.3" />
+							<path d="M17.51 12.85L6.5 19.15" />
+						</svg>
 						জমি
 					</button>
 					<button
 						type="button"
 						data-filter="flat"
-						class="uppercase px-4 py-1.5 rounded-full cursor-pointer"
+						class="uppercase flex items-center gap-1 px-4 py-1.5 rounded-full cursor-pointer"
 					>
+						<svg
+							xmlns="http://www.w3.org/2000/svg"
+							viewBox="0 0 48 48"
+							fill="none"
+						>
+							<path
+								fill="currentColor"
+								fill-rule="evenodd"
+								clip-rule="evenodd"
+								d="M8 43C8 42.4477 8.44772 42 9 42H39C39.5523 42 40 42.4477 40 43C40 43.5523 39.5523 44 39 44H9C8.44772 44 8 43.5523 8 43Z"
+							/>
+							<path
+								fill="currentColor"
+								fill-rule="evenodd"
+								clip-rule="evenodd"
+								d="M12 22V42H17V22H12ZM11 20C10.4477 20 10 20.4477 10 21V43C10 43.5523 10.4477 44 11 44H18C18.5523 44 19 43.5523 19 43V21C19 20.4477 18.5523 20 18 20H11Z"
+							/>
+							<path
+								fill="currentColor"
+								fill-rule="evenodd"
+								clip-rule="evenodd"
+								d="M17 4L33 10V24H28C27.4477 24 27 24.4477 27 25V42H17V4ZM20 13H22V15H20V13ZM26 13H24V15H26V13ZM28 13H30V15H28V13ZM22 17H20V19H22V17ZM24 17H26V19H24V17ZM30 17H28V19H30V17ZM20 21H22V23H20V21ZM26 21H24V23H26V21ZM28 21H30V23H28V21ZM22 25H20V27H22V25ZM24 25H26V27H24V25ZM20 29H22V31H20V29ZM26 29H24V31H26V29ZM22 33H20V35H22V33ZM24 33H26V35H24V33ZM20 37H22V39H20V37ZM26 37H24V39H26V37Z"
+							/>
+							<path
+								fill="currentColor"
+								fill-rule="evenodd"
+								clip-rule="evenodd"
+								d="M29 26V42H36V26H29ZM28 24C27.4477 24 27 24.4477 27 25V43C27 43.5523 27.4477 44 28 44H37C37.5523 44 38 43.5523 38 43V25C38 24.4477 37.5523 24 37 24H28Z"
+							/>
+							<path
+								fill="currentColor"
+								fill-rule="evenodd"
+								clip-rule="evenodd"
+								d="M34 30H31V28H34V30ZM34 34H31V32H34V34ZM34 38H31V36H34V38ZM34 42H31V40H34V42ZM15 13L15 21H13L13 13H15Z"
+							/>
+						</svg>
 						ফ্লাট
 					</button>
 				</div>
@@ -606,12 +658,14 @@
 								</svg>
 								<h6>ঢাকা উদ্দান হাউসিং, ঢাকা</h6>
 							</a>
-							<div class="text-sm mt-2 sm:flex sm:gap-2.5">
-								<div class="flex items-center gap-1">
+							<div
+								id="property-details"
+								class="text-sm mt-2 flex flex-wrap gap-2.5"
+							>
+								<span class="flex items-center gap-1">
 									<svg
 										xmlns="http://www.w3.org/2000/svg"
 										viewBox="0 0 60 60"
-										class="size-4"
 										fill="currentColor"
 									>
 										<g>
@@ -691,13 +745,12 @@
 											</g>
 										</g>
 									</svg>
-									<span>১৮০০ স্কোয়ার ফিট</span>
-								</div>
-								<div class="flex items-center gap-1">
+									১৮০০ স্কোয়ার ফিট
+								</span>
+								<span class="flex items-center gap-1">
 									<svg
 										xmlns="http://www.w3.org/2000/svg"
 										viewBox="0 0 256 256"
-										class="size-4"
 										fill="currentColor"
 									>
 										<path
@@ -714,11 +767,9 @@
     C245.1,226.3,244.6,225.8,244.1,225.5z M77.4,234.9l-9.7-6l9.7-6V234.9z M224.7,234.9v-12.1l9.7,6L224.7,234.9z"
 										/>
 									</svg>
-									<span
-										>৫ রুম (৩ বেড রুম, ১ গেস্ট রুম, ১
-										ডাইনিং), ৩ টয়লেট</span
-									>
-								</div>
+									৫ রুম (৩ বেড রুম, ১ গেস্ট রুম, ১ ডাইনিং), ৩
+									টয়লেট
+								</span>
 							</div>
 						</div>
 					</div>
@@ -771,12 +822,14 @@
 								</svg>
 								<h6>সিলিকন সিটি, ঢাকা</h6>
 							</a>
-							<div class="text-sm mt-2 sm:flex sm:gap-2.5">
-								<div class="flex items-center gap-1">
+							<div
+								id="property-details"
+								class="text-sm mt-2 flex flex-wrap gap-2.5"
+							>
+								<span class="flex items-center gap-1">
 									<svg
 										xmlns="http://www.w3.org/2000/svg"
 										viewBox="0 0 60 60"
-										class="size-4"
 										fill="currentColor"
 									>
 										<g>
@@ -856,13 +909,12 @@
 											</g>
 										</g>
 									</svg>
-									<span>২৪০০ স্কোয়ার ফিট</span>
-								</div>
-								<div class="flex items-center gap-1">
+									২৪০০ স্কোয়ার ফিট
+								</span>
+								<span class="flex items-center gap-1">
 									<svg
 										xmlns="http://www.w3.org/2000/svg"
 										viewBox="0 0 256 256"
-										class="size-4"
 										fill="currentColor"
 									>
 										<path
@@ -879,11 +931,9 @@
     C245.1,226.3,244.6,225.8,244.1,225.5z M77.4,234.9l-9.7-6l9.7-6V234.9z M224.7,234.9v-12.1l9.7,6L224.7,234.9z"
 										/>
 									</svg>
-									<span
-										>৫ রুম (৩ বেড রুম, ১ গেস্ট রুম, ১
-										ডাইনিং), ৩ টয়লেট</span
-									>
-								</div>
+									৫ রুম (৩ বেড রুম, ১ গেস্ট রুম, ১ ডাইনিং), ৩
+									টয়লেট
+								</span>
 							</div>
 						</div>
 					</div>
@@ -936,12 +986,14 @@
 								</svg>
 								<h6>চাঁদউদ্দান, ঢাকা</h6>
 							</a>
-							<div class="text-sm mt-2 sm:flex sm:gap-2.5">
-								<div class="flex items-center gap-1">
+							<div
+								id="property-details"
+								class="text-sm mt-2 flex flex-wrap gap-2.5"
+							>
+								<span class="flex items-center gap-1">
 									<svg
 										xmlns="http://www.w3.org/2000/svg"
 										viewBox="0 0 60 60"
-										class="size-4"
 										fill="currentColor"
 									>
 										<g>
@@ -1021,13 +1073,12 @@
 											</g>
 										</g>
 									</svg>
-									<span>১৬০০ স্কোয়ার ফিট</span>
-								</div>
-								<div class="flex items-center gap-1">
+									১৬০০ স্কোয়ার ফিট
+								</span>
+								<span class="flex items-center gap-1">
 									<svg
 										xmlns="http://www.w3.org/2000/svg"
 										viewBox="0 0 256 256"
-										class="size-4"
 										fill="currentColor"
 									>
 										<path
@@ -1044,11 +1095,8 @@
     C245.1,226.3,244.6,225.8,244.1,225.5z M77.4,234.9l-9.7-6l9.7-6V234.9z M224.7,234.9v-12.1l9.7,6L224.7,234.9z"
 										/>
 									</svg>
-									<span
-										>৪ রুম (৩ বেড রুম, ১ ডাইনিং), ২
-										টয়লেট</span
-									>
-								</div>
+									৪ রুম (৩ বেড রুম, ১ ডাইনিং), ২ টয়লেট
+								</span>
 							</div>
 						</div>
 					</div>
@@ -1105,12 +1153,14 @@
 								</svg>
 								<h6>গাবতলী বেড়িবাঁধ সংলগ্ন, ঢাকা</h6>
 							</a>
-							<div class="text-sm mt-2 sm:flex sm:gap-2.5">
-								<div class="flex items-center gap-1">
+							<div
+								id="property-details"
+								class="text-sm mt-2 flex flex-wrap gap-2.5"
+							>
+								<span class="flex items-center gap-1">
 									<svg
 										xmlns="http://www.w3.org/2000/svg"
 										viewBox="0 0 60 60"
-										class="size-4"
 										fill="currentColor"
 									>
 										<g>
@@ -1190,13 +1240,12 @@
 											</g>
 										</g>
 									</svg>
-									<span>২০০০ স্কোয়ার ফিট</span>
-								</div>
-								<div class="flex items-center gap-1">
+									২০০০ স্কোয়ার ফিট
+								</span>
+								<span class="flex items-center gap-1">
 									<svg
 										xmlns="http://www.w3.org/2000/svg"
 										viewBox="0 0 256 256"
-										class="size-4"
 										fill="currentColor"
 									>
 										<path
@@ -1213,11 +1262,9 @@
     C245.1,226.3,244.6,225.8,244.1,225.5z M77.4,234.9l-9.7-6l9.7-6V234.9z M224.7,234.9v-12.1l9.7,6L224.7,234.9z"
 										/>
 									</svg>
-									<span
-										>৫ রুম (৩ বেড রুম, ১ গেস্ট রুম, ১
-										ডাইনিং), ৩ টয়লেট</span
-									>
-								</div>
+									৫ রুম (৩ বেড রুম, ১ গেস্ট রুম, ১ ডাইনিং), ৩
+									টয়লেট
+								</span>
 							</div>
 						</div>
 					</div>
@@ -1274,12 +1321,14 @@
 								</svg>
 								<h6>গাবতলী বেড়িবাঁধ সংলগ্ন, ঢাকা</h6>
 							</a>
-							<div class="text-sm mt-2 sm:flex sm:gap-2.5">
-								<div class="flex items-center gap-1">
+							<div
+								id="property-details"
+								class="text-sm mt-2 flex flex-wrap gap-2.5"
+							>
+								<span class="flex items-center gap-1">
 									<svg
 										xmlns="http://www.w3.org/2000/svg"
 										viewBox="0 0 60 60"
-										class="size-4"
 										fill="currentColor"
 									>
 										<g>
@@ -1359,13 +1408,12 @@
 											</g>
 										</g>
 									</svg>
-									<span>২০০০ স্কোয়ার ফিট</span>
-								</div>
-								<div class="flex items-center gap-1">
+									২০০০ স্কোয়ার ফিট
+								</span>
+								<span class="flex items-center gap-1">
 									<svg
 										xmlns="http://www.w3.org/2000/svg"
 										viewBox="0 0 256 256"
-										class="size-4"
 										fill="currentColor"
 									>
 										<path
@@ -1382,11 +1430,9 @@
     C245.1,226.3,244.6,225.8,244.1,225.5z M77.4,234.9l-9.7-6l9.7-6V234.9z M224.7,234.9v-12.1l9.7,6L224.7,234.9z"
 										/>
 									</svg>
-									<span
-										>৫ রুম (৩ বেড রুম, ১ গেস্ট রুম, ১
-										ডাইনিং), ৩ টয়লেট</span
-									>
-								</div>
+									৫ রুম (৩ বেড রুম, ১ গেস্ট রুম, ১ ডাইনিং), ৩
+									টয়লেট
+								</span>
 							</div>
 						</div>
 					</div>
@@ -1443,12 +1489,14 @@
 								</svg>
 								<h6>গাবতলী বেড়িবাঁধ সংলগ্ন, ঢাকা</h6>
 							</a>
-							<div class="text-sm mt-2 sm:flex sm:gap-2.5">
-								<div class="flex items-center gap-1">
+							<div
+								id="property-details"
+								class="text-sm mt-2 flex flex-wrap gap-2.5"
+							>
+								<span class="flex items-center gap-1">
 									<svg
 										xmlns="http://www.w3.org/2000/svg"
 										viewBox="0 0 60 60"
-										class="size-4"
 										fill="currentColor"
 									>
 										<g>
@@ -1528,13 +1576,12 @@
 											</g>
 										</g>
 									</svg>
-									<span>২০০০ স্কোয়ার ফিট</span>
-								</div>
-								<div class="flex items-center gap-1">
+									২০০০ স্কোয়ার ফিট
+								</span>
+								<span class="flex items-center gap-1">
 									<svg
 										xmlns="http://www.w3.org/2000/svg"
 										viewBox="0 0 256 256"
-										class="size-4"
 										fill="currentColor"
 									>
 										<path
@@ -1551,11 +1598,9 @@
     C245.1,226.3,244.6,225.8,244.1,225.5z M77.4,234.9l-9.7-6l9.7-6V234.9z M224.7,234.9v-12.1l9.7,6L224.7,234.9z"
 										/>
 									</svg>
-									<span
-										>৫ রুম (৩ বেড রুম, ১ গেস্ট রুম, ১
-										ডাইনিং), ৩ টয়লেট</span
-									>
-								</div>
+									৫ রুম (৩ বেড রুম, ১ গেস্ট রুম, ১ ডাইনিং), ৩
+									টয়লেট
+								</span>
 							</div>
 						</div>
 					</div>
@@ -1612,12 +1657,14 @@
 								</svg>
 								<h6>গাবতলী বেড়িবাঁধ সংলগ্ন, ঢাকা</h6>
 							</a>
-							<div class="text-sm mt-2 sm:flex sm:gap-2.5">
-								<div class="flex items-center gap-1">
+							<div
+								id="property-details"
+								class="text-sm mt-2 flex flex-wrap gap-2.5"
+							>
+								<span class="flex items-center gap-1">
 									<svg
 										xmlns="http://www.w3.org/2000/svg"
 										viewBox="0 0 60 60"
-										class="size-4"
 										fill="currentColor"
 									>
 										<g>
@@ -1697,13 +1744,12 @@
 											</g>
 										</g>
 									</svg>
-									<span>২০০০ স্কোয়ার ফিট</span>
-								</div>
-								<div class="flex items-center gap-1">
+									২০০০ স্কোয়ার ফিট
+								</span>
+								<span class="flex items-center gap-1">
 									<svg
 										xmlns="http://www.w3.org/2000/svg"
 										viewBox="0 0 256 256"
-										class="size-4"
 										fill="currentColor"
 									>
 										<path
@@ -1720,14 +1766,20 @@
     C245.1,226.3,244.6,225.8,244.1,225.5z M77.4,234.9l-9.7-6l9.7-6V234.9z M224.7,234.9v-12.1l9.7,6L224.7,234.9z"
 										/>
 									</svg>
-									<span
-										>৫ রুম (৩ বেড রুম, ১ গেস্ট রুম, ১
-										ডাইনিং), ৩ টয়লেট</span
-									>
-								</div>
+									৫ রুম (৩ বেড রুম, ১ গেস্ট রুম, ১ ডাইনিং), ৩
+									টয়লেট
+								</span>
 							</div>
 						</div>
 					</div>
+				</div>
+				<div class="text-center mt-8">
+					<a
+						id="target-link"
+						href=""
+						class="text-white bg-zinc-900 px-5 py-1.5 rounded-full"
+						>আরও দেখুন</a
+					>
 				</div>
 			</div>
 		</section>

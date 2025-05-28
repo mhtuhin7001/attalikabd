@@ -231,16 +231,27 @@ document.addEventListener("DOMContentLoaded", () => {
 	const btnList = document.getElementById("filter-btns");
 	const btn = btnList.querySelectorAll("#filter-btns button");
 	const property = document.querySelectorAll(".property");
+	const targetLink = document.getElementById("target-link");
 	let conferenceIndex = 0;
-	const itemsPerPage = 6; // Number of items to show at a time
-	let currentFilter = "all"; // Track current filter
+	const itemsPerPage = 6;
+	let currentFilter = "all";
+	// Initialize view transition names
 	property.forEach((conference) => {
 		conference.style.viewTransitionName = `conf-${++conferenceIndex}`;
 	});
-	btn.forEach((button) => {
+	// Add click handlers to filter buttons
+	btn.forEach((button, index) => {
 		button.addEventListener("click", (e) => {
-			let confCategory = e.target.getAttribute("data-filter");
-			currentFilter = confCategory; // Update current filter
+			const confCategory = e.target.getAttribute("data-filter");
+			currentFilter = confCategory;
+
+			// Update target link's href
+			if (targetLink) {
+				// First button gets "#", others get their filter value
+				targetLink.href =
+					index === 0 ? "javascript:void(0)" : `/${confCategory}`;
+			}
+			// Handle view transition if supported
 			if (!document.startViewTransition) {
 				updateActiveButton(e.target);
 				filterEvents(confCategory);
@@ -254,15 +265,22 @@ document.addEventListener("DOMContentLoaded", () => {
 			}
 		});
 	});
+	// Update active button styling
 	function updateActiveButton(newButton) {
-		btnList
-			.querySelector(".border-1", ".border-zinc-900")
-			.classList.remove("border-1", "border-zinc-900");
+		// Remove classes from current button
+		const currentActive = btnList.querySelector(
+			".border-1.border-zinc-900"
+		);
+		if (currentActive) {
+			currentActive.classList.remove("border-1", "border-zinc-900");
+		}
+		// Add classes to clicked button
 		newButton.classList.add("border-1", "border-zinc-900");
 	}
+	// Filter events based on category
 	function filterEvents(filter) {
 		property.forEach((conference) => {
-			let eventCategory = conference.getAttribute("data-category");
+			const eventCategory = conference.getAttribute("data-category");
 			if (filter === "all" || filter === eventCategory) {
 				conference.removeAttribute("hidden");
 			} else {
@@ -270,22 +288,27 @@ document.addEventListener("DOMContentLoaded", () => {
 			}
 		});
 	}
+	// Show only the first X items
 	function showFirstItems() {
 		let visibleItems = 0;
-		property.forEach((conference, index) => {
+		property.forEach((conference) => {
 			if (!conference.hasAttribute("hidden")) {
 				if (visibleItems < itemsPerPage) {
-					conference.style.display = ""; // Show the item
+					conference.style.display = "";
 					visibleItems++;
 				} else {
-					conference.style.display = "none"; // Hide the item
+					conference.style.display = "none";
 				}
 			} else {
-				conference.style.display = "none"; // Keep filtered items hidden
+				conference.style.display = "none";
 			}
 		});
 	}
-	// Initialize by showing first 6 items
+	// Initialize
+	if (btn.length > 0) {
+		// Activate first button by default
+		btn[0].classList.add("border-1", "border-zinc-900");
+	}
 	filterEvents(currentFilter);
 	showFirstItems();
 });

@@ -81,6 +81,14 @@ header nav ul > .menu-item:last-child a svg {
 	@apply lg:hidden;
 }
 
+/* Properties */
+#properties #filter-btns button svg {
+	@apply size-6;
+}
+#properties .property #property-details svg {
+	@apply size-4;
+}
+
 /* Fonts */
 @font-face {
 	font-family: "Anek Bangla";
