@@ -26,7 +26,7 @@ document.addEventListener("DOMContentLoaded", () => {
 		menu.insertBefore(wrapper, items[0]);
 		// Move all except the last 2 items into the wrapper
 		items.slice(0, -2).forEach((item) => wrapper.appendChild(item));
-		totalWidth = wrapper.offsetWidth + 15;
+		totalWidth = wrapper.offsetWidth + 8;
 		menuBg.style.width = `${totalWidth}px`;
 	}
 	window.addEventListener("scroll", () => {
@@ -41,7 +41,7 @@ document.addEventListener("DOMContentLoaded", () => {
 		gsap.to(menuBg, { width, duration: 0.5 });
 	});
 	// Menu BG Height
-	const header = document.querySelector("header").offsetHeight + 15;
+	const header = document.querySelector("header").offsetHeight + 8;
 	menuBg.style.height = `${header}px`;
 
 	// Menu Offcanvas
@@ -74,7 +74,6 @@ document.addEventListener("DOMContentLoaded", () => {
 	if (window.innerWidth >= 1024) {
 		gsapTl.from("#menu-bg", {
 			y: -80,
-			overwrite: "auto",
 			opacity: 0,
 			duration: 0.4,
 		});
@@ -318,7 +317,6 @@ document.addEventListener("DOMContentLoaded", () => {
 	function initializeSwiper(selector) {
 		return new Swiper(selector, {
 			freeMode: true,
-			grabCursor: true,
 			loop: true,
 			speed: 7000,
 			spaceBetween: 30,
@@ -348,7 +346,7 @@ document.addEventListener("DOMContentLoaded", () => {
 	initializeSwiper(".citySlider");
 });
 
-// Hover Play Video
+// On Hover Video Play
 document.addEventListener("DOMContentLoaded", () => {
 	document.querySelectorAll(".citySlider video").forEach((video) => {
 		video.addEventListener("mouseenter", () => {
