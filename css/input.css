@@ -11,11 +11,13 @@ h1 {
 h2 {
 	@apply text-[clamp(1.2rem,calc(2.5vw+.5rem),4.5rem)] leading-[clamp(1.7rem,calc(2.5vw+1rem),5rem)];
 }
+h3 {
+	@apply text-[clamp(1.2rem,calc(2vw+0.5rem),3.5rem)] leading-[clamp(1.5rem,calc(2vw+0.5rem),4rem)];
+}
 h4 {
 	@apply text-[clamp(1rem,calc(1.5vw+0.5rem),2.75rem)] leading-[clamp(1.25rem,calc(1.75vw+0.5rem),3rem)];
 }
-h5,
-#brand {
+h5 {
 	@apply text-[clamp(1rem,calc(1vw+0.5rem),2rem)];
 }
 h6,
@@ -87,6 +89,14 @@ header nav ul > .menu-item:last-child a svg {
 }
 #properties .property #property-details svg {
 	@apply size-4;
+}
+
+/* Footer */
+footer ul .menu-item a {
+	@apply flex gap-1.5 ms-(--sectionGap) mb-2 py-1 border-b-1 border-b-[#0000008d];
+}
+footer ul .menu-item a svg {
+	@apply size-5;
 }
 
 /* Fonts */
