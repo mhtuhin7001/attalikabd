@@ -1,0 +1,835 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>আমাদের সম্পর্কে - অট্টালিকা</title>
+		<link
+			rel="shortcut icon"
+			href="assets/images/favicon.png"
+			type="image/x-icon"
+		/>
+		<!-- Swiper Style -->
+		<link rel="stylesheet" href="css/swiper-bundle.min.css" />
+		<!-- Main Style -->
+		<link rel="stylesheet" href="css/input.css" />
+	</head>
+	<body class="font-bangla">
+		<!-- Header -->
+		<header
+			class="fixed text-white flex justify-between items-center mx-(--sectionGap) mt-[clamp(1.5rem,2%,3.5rem)] left-0 right-0 z-50"
+		>
+			<a
+				href="index.html"
+				class="font-semibold ps-3 z-2 lg:absolute lg:z-51"
+			>
+				<h5>অট্টালিকা</h5>
+			</a>
+			<nav
+				id="main-menu"
+				class="fixed w-full flex justify-end top-0 -right-full z-50 lg:relative lg:bg-inherit lg:right-0"
+			>
+				<div
+					class="w-full max-w-md h-dvh flex flex-col bg-zinc-900 px-1.5 py-4 lg:size-full lg:bg-inherit lg:py-0"
+				>
+					<button
+						id="menu-close"
+						class="cursor-pointer ms-auto mb-3.5 me-4 lg:hidden"
+					>
+						<svg
+							xmlns="http://www.w3.org/2000/svg"
+							fill="none"
+							viewBox="0 0 24 24"
+							stroke-width="1.5"
+							stroke="currentColor"
+							class="size-6"
+						>
+							<path
+								stroke-linecap="round"
+								stroke-linejoin="round"
+								d="M6 18 18 6M6 6l12 12"
+							/>
+						</svg>
+					</button>
+					<ul class="lg:flex lg:justify-cente">
+						<li class="menu-item current-menu-item">
+							<a href="index.html">
+								<svg
+									xmlns="http://www.w3.org/2000/svg"
+									viewBox="1 1 22 22"
+									fill="none"
+								>
+									<path
+										d="M7,21h10c2.2,0,4-1.8,4-4v-6.5c0-1.3-0.6-2.4-1.6-3.2l-5-3.8C13,2.5,11,2.5,9.6,3.6l-5,3.7C3.6,8.1,3,9.2,3,10.5V17 C3,19.2,4.8,21,7,21z M5,10.5c0-0.6,0.3-1.2,0.8-1.6l5-3.8c0.4-0.3,0.8-0.4,1.2-0.4s0.8,0.1,1.2,0.4l5,3.8c0.5,0.4,0.8,1,0.8,1.6 V17c0,1.1-0.9,2-2,2H7c-1.1,0-2-0.9-2-2V10.5z"
+										fill="currentColor"
+									/>
+									<circle
+										cx="12"
+										cy="13"
+										r="3.5"
+										stroke="currentColor"
+										stroke-width="1.5"
+										fill="none"
+									/>
+								</svg>
+								হোম
+							</a>
+						</li>
+						<li class="menu-item">
+							<a href="land.html">
+								<svg
+									xmlns="http://www.w3.org/2000/svg"
+									viewBox="0 0 24 24"
+									fill="none"
+									stroke="currentColor"
+									stroke-linecap="round"
+									stroke-linejoin="round"
+									stroke-width="2"
+								>
+									<path d="M12 8L18 5L12 2v10" />
+									<path
+										d="M8 11.99L2.5 15.13a1 1 0 0 0 0 1.74l8.5 4.86a2 2 0 0 0 2 0l8.5-4.86a1 1 0 0 0 0-1.74L16 12"
+									/>
+									<path d="M6.49 12.85l11.02 6.3" />
+									<path d="M17.51 12.85L6.5 19.15" />
+								</svg>
+								জমি
+							</a>
+						</li>
+						<li class="menu-item">
+							<a href="flat.html">
+								<svg
+									xmlns="http://www.w3.org/2000/svg"
+									viewBox="0 0 48 48"
+									fill="none"
+								>
+									<path
+										fill="currentColor"
+										fill-rule="evenodd"
+										clip-rule="evenodd"
+										d="M8 43C8 42.4477 8.44772 42 9 42H39C39.5523 42 40 42.4477 40 43C40 43.5523 39.5523 44 39 44H9C8.44772 44 8 43.5523 8 43Z"
+									/>
+									<path
+										fill="currentColor"
+										fill-rule="evenodd"
+										clip-rule="evenodd"
+										d="M12 22V42H17V22H12ZM11 20C10.4477 20 10 20.4477 10 21V43C10 43.5523 10.4477 44 11 44H18C18.5523 44 19 43.5523 19 43V21C19 20.4477 18.5523 20 18 20H11Z"
+									/>
+									<path
+										fill="currentColor"
+										fill-rule="evenodd"
+										clip-rule="evenodd"
+										d="M17 4L33 10V24H28C27.4477 24 27 24.4477 27 25V42H17V4ZM20 13H22V15H20V13ZM26 13H24V15H26V13ZM28 13H30V15H28V13ZM22 17H20V19H22V17ZM24 17H26V19H24V17ZM30 17H28V19H30V17ZM20 21H22V23H20V21ZM26 21H24V23H26V21ZM28 21H30V23H28V21ZM22 25H20V27H22V25ZM24 25H26V27H24V25ZM20 29H22V31H20V29ZM26 29H24V31H26V29ZM22 33H20V35H22V33ZM24 33H26V35H24V33ZM20 37H22V39H20V37ZM26 37H24V39H26V37Z"
+									/>
+									<path
+										fill="currentColor"
+										fill-rule="evenodd"
+										clip-rule="evenodd"
+										d="M29 26V42H36V26H29ZM28 24C27.4477 24 27 24.4477 27 25V43C27 43.5523 27.4477 44 28 44H37C37.5523 44 38 43.5523 38 43V25C38 24.4477 37.5523 24 37 24H28Z"
+									/>
+									<path
+										fill="currentColor"
+										fill-rule="evenodd"
+										clip-rule="evenodd"
+										d="M34 30H31V28H34V30ZM34 34H31V32H34V34ZM34 38H31V36H34V38ZM34 42H31V40H34V42ZM15 13L15 21H13L13 13H15Z"
+									/>
+								</svg>
+								ফ্ল্যাট
+							</a>
+						</li>
+						<li class="menu-item">
+							<a href="services.html">
+								<svg
+									viewBox="0 0 32 32"
+									fill="none"
+									xmlns="http://www.w3.org/2000/svg"
+								>
+									<circle
+										cx="11.9"
+										cy="20.1"
+										r="5.8"
+										stroke="currentColor"
+										stroke-width="2"
+										stroke-miterlimit="10"
+									/>
+									<line
+										x1="3.9"
+										y1="23.4"
+										x2="6.6"
+										y2="22.3"
+										stroke="currentColor"
+										stroke-width="2"
+										stroke-miterlimit="10"
+									/>
+									<line
+										x1="17.2"
+										y1="17.9"
+										x2="19.9"
+										y2="16.8"
+										stroke="currentColor"
+										stroke-width="2"
+										stroke-miterlimit="10"
+									/>
+									<line
+										x1="8.6"
+										y1="12.1"
+										x2="9.7"
+										y2="14.8"
+										stroke="currentColor"
+										stroke-width="2"
+										stroke-miterlimit="10"
+									/>
+									<line
+										x1="14.1"
+										y1="25.4"
+										x2="15.2"
+										y2="28.1"
+										stroke="currentColor"
+										stroke-width="2"
+										stroke-miterlimit="10"
+									/>
+									<line
+										x1="3.9"
+										y1="16.8"
+										x2="6.6"
+										y2="17.9"
+										stroke="currentColor"
+										stroke-width="2"
+										stroke-miterlimit="10"
+									/>
+									<line
+										x1="17.2"
+										y1="22.3"
+										x2="19.9"
+										y2="23.4"
+										stroke="currentColor"
+										stroke-width="2"
+										stroke-miterlimit="10"
+									/>
+									<line
+										x1="15.2"
+										y1="12.1"
+										x2="14.1"
+										y2="14.8"
+										stroke="currentColor"
+										stroke-width="2"
+										stroke-miterlimit="10"
+									/>
+									<line
+										x1="9.7"
+										y1="25.4"
+										x2="8.6"
+										y2="28.1"
+										stroke="currentColor"
+										stroke-width="2"
+										stroke-miterlimit="10"
+									/>
+									<circle
+										cx="22.5"
+										cy="9.5"
+										r="4.7"
+										stroke="currentColor"
+										stroke-width="2"
+										stroke-miterlimit="10"
+									/>
+									<line
+										x1="17.5"
+										y1="14.5"
+										x2="19.2"
+										y2="12.8"
+										stroke="currentColor"
+										stroke-width="2"
+										stroke-miterlimit="10"
+									/>
+									<line
+										x1="25.8"
+										y1="6.2"
+										x2="27.4"
+										y2="4.6"
+										stroke="currentColor"
+										stroke-width="2"
+										stroke-miterlimit="10"
+									/>
+									<line
+										x1="17.5"
+										y1="4.6"
+										x2="19.2"
+										y2="6.2"
+										stroke="currentColor"
+										stroke-width="2"
+										stroke-miterlimit="10"
+									/>
+									<line
+										x1="25.8"
+										y1="12.8"
+										x2="27.4"
+										y2="14.5"
+										stroke="currentColor"
+										stroke-width="2"
+										stroke-miterlimit="10"
+									/>
+									<line
+										x1="15.5"
+										y1="9.5"
+										x2="17.8"
+										y2="9.5"
+										stroke="currentColor"
+										stroke-width="2"
+										stroke-miterlimit="10"
+									/>
+									<line
+										x1="27.2"
+										y1="9.5"
+										x2="29.5"
+										y2="9.5"
+										stroke="currentColor"
+										stroke-width="2"
+										stroke-miterlimit="10"
+									/>
+									<line
+										x1="22.5"
+										y1="2.5"
+										x2="22.5"
+										y2="4.8"
+										stroke="currentColor"
+										stroke-width="2"
+										stroke-miterlimit="10"
+									/>
+									<line
+										x1="22.5"
+										y1="14.2"
+										x2="22.5"
+										y2="16.5"
+										stroke="currentColor"
+										stroke-width="2"
+										stroke-miterlimit="10"
+									/>
+								</svg>
+								সেবাসমূহ
+							</a>
+						</li>
+						<li class="menu-item">
+							<a href="about.html">
+								<svg
+									viewBox="0 0 24 24"
+									fill="none"
+									xmlns="http://www.w3.org/2000/svg"
+								>
+									<path
+										d="M12.4545 7.5C12.4545 8.1778 11.905 8.72727 11.2272 8.72727C10.5494 8.72727 9.99996 8.1778 9.99996 7.5C9.99996 6.82219 10.5494 6.27273 11.2272 6.27273C11.905 6.27273 12.4545 6.82219 12.4545 7.5Z"
+										fill="currentColor"
+									/>
+									<path
+										d="M10 11L12 11L12 16L14 16"
+										stroke="currentColor"
+										stroke-width="2"
+										stroke-linecap="round"
+										stroke-linejoin="round"
+									/>
+									<path
+										d="M20 12C20 16.4183 16.4183 20 12 20C7.58172 20 4 16.4183 4 12C4 7.58172 7.58172 4 12 4C16.4183 4 20 7.58172 20 12Z"
+										stroke="currentColor"
+										stroke-width="2"
+									/>
+								</svg>
+								আমাদের সম্পর্কে
+							</a>
+						</li>
+						<li class="menu-item">
+							<a href="contact.html">
+								<svg
+									xmlns="http://www.w3.org/2000/svg"
+									viewBox="0 0 64 64"
+									fill="currentColor"
+								>
+									<path
+										d="M37.063 18.062h-.06c-.552 0-.97.448-.97 1s.478 1 1.03 1 1-.448 1-1-.448-1-1-1z"
+									/>
+									<path
+										d="M45.179 18.062h-.056c-.552 0-.972.448-.972 1s.476 1 1.028 1 1-.448 1-1-.448-1-1-1z"
+									/>
+									<path
+										d="M53.298 18.062h-.06c-.552 0-.97.448-.97 1s.478 1 1.03 1 1-.448 1-1-.448-1-1-1z"
+									/>
+									<path
+										d="M45.195 45.927c-5.15-2.904-6.692-2.667-10.617-.447-2.015 1.339-4.44.522-8.656-2.911a63.59 63.59 0 0 1-4.703-4.705c-3.178-3.9-4.044-7.459-3.011-8.532 3.042-3.271 2.352-5.957-.334-10.717-1.617-3.06-3.393-6.104-5.757-6.803-1.714-.503-4.26.815-5.017 1.319-1.95 1.298-3.8 3.594-4.831 5.994-1.896 4.414-1.393 9.733-.29 13.24 1.812 5.749 6.161 12.406 11.635 17.809 5.404 5.476 12.062 9.824 17.808 11.631 1.816.573 4.117.984 6.528.984 2.244 0 4.583-.356 6.713-1.271 2.399-1.033 4.694-2.884 5.989-4.83.504-.756 1.828-3.3 1.318-5.021-1.012-3.47-4.057-5.247-7.092-6.85zM44.237 47.682c1.852.979 5.3 2.802 5.815 4.551.106.356-.023 1.006-.26 1.681l-13.53-7.089c2.545-1.409 3.575-1.624 7.975.857zM11.551 13.731c1.752.518 3.575 3.966 4.568 5.843 2.62 4.647 2.612 6.113.927 8.058L9.748 14.036c.556-.206 1.105-.342 1.5-.342.116 0 .219.012.303.037zM43.873 59.681c-3.918 1.684-8.831 1.169-11.85.216-5.452-1.714-11.804-5.877-16.99-11.133l-.01-.01c-5.244-5.244-9.407-11.596-11.126-17.05-.95-3.02-1.462-7.935.22-11.85.844-1.965 2.312-3.83 3.87-4.949l7.923 14.762c-.437 2.373.919 5.904 3.768 9.4a63.46 63.46 0 0 0 4.99 4.992c3.088 2.515 6.33 4.626 9.367 3.791l14.871 7.792c-1.955 1.438-3.861 2.954-5.871 3.819z"
+									/>
+									<path
+										d="M60.955 10.771c-4.57-8.712-15.378-12.082-24.093-7.514-8.712 4.572-12.083 15.381-7.514 24.095.331.631.709 1.255 1.127 1.861l-2.701 4.63a1.001 1.001 0 0 0 .952 1.5l7.75-.685a19.68 19.68 0 0 0 8.675 2.263 19.6 19.6 0 0 0 8.293-2.055c8.713-4.57 12.083-15.379 7.513-24.094zM52.513 33.095c-4.847 2.543-10.572 2.421-15.316-.325a1 1 0 0 0-.589-.131l-6.134.542 2.054-3.519a1.002 1.002 0 0 0-.061-1.1 19.444 19.444 0 0 1-1.349-2.138c-4.057-7.737-1.064-17.335 6.672-21.396 7.738-4.058 17.336-1.064 21.395 6.672 4.058 7.737 1.064 17.335-6.672 21.395z"
+									/>
+								</svg>
+								যোগাযোগ
+							</a>
+						</li>
+					</ul>
+				</div>
+			</nav>
+			<button
+				id="menu-open"
+				class="text-white cursor-pointer pe-2 z-2 lg:hidden"
+			>
+				<svg
+					xmlns="http://www.w3.org/2000/svg"
+					fill="none"
+					viewBox="0 0 24 24"
+					stroke-width="1.5"
+					stroke="currentColor"
+					class="size-6"
+				>
+					<path
+						stroke-linecap="round"
+						stroke-linejoin="round"
+						d="M3.75 6.75h16.5M3.75 12H12m-8.25 5.25h16.5"
+					/>
+				</svg>
+			</button>
+			<div
+				id="menu-bg"
+				class="absolute w-10 bg-zinc-900 rounded-full top-1/2 -translate-y-1/2 right-0 lg:mx-auto lg:left-0"
+			></div>
+		</header>
+
+		<!-- Hero -->
+		<section
+			id="hero-land"
+			class="h-[70vh] grid text-white bg-center bg-cover place-items-center"
+			style="background-image: url(assets/images/land-1.jpg)"
+		>
+			<h2
+				class="relative translate-0 cursor-pointer before:content-[''] before:absolute before:w-full before:h-0.5 before:left-0 before:bg-white before:bottom-1 before:transition-all before:duration-600 before:ease-[cubic-bezier(0.16,1,0.3,1)] before:scale-x-100 before:origin-right before:delay-150 before:-z-10 after:content-[''] after:absolute after:w-full after:h-0.5 after:left-0 after:bg-white after:bottom-1 after:transition-all after:duration-600 after:ease-[cubic-bezier(0.16,1,0.3,1)] after:scale-x-0 after:origin-left after:-z-10 hover:before:scale-x-0 hover:before:origin-right hover:before:delay-0 hover:after:scale-x-100 hover:after:origin-left hover:after:delay-150"
+			>
+				আমাদের সম্পর্কে
+			</h2>
+		</section>
+
+		<!-- Footer -->
+		<footer>
+			<div
+				class="flex flex-col gap-7 p-(--sectionGap) md:flex-row md:justify-between md:gap-0"
+			>
+				<div class="md:basis-2/5">
+					<a href="" class="font-semibold"><h3>অট্টালিকা</h3></a>
+					<p class="mt-1 mb-4">
+						আপনার পছন্দের প্রপার্টি খুঁজে নিন অনলাইনে <br />
+						সহজ, দ্রুত ও নিরাপদ উপায়ে। আজই শুরু করুন!
+					</p>
+					<div class="text-white flex items-center gap-3">
+						<a
+							href=""
+							class="size-8 inline-grid place-items-center bg-zinc-900 rounded-full 2xl:size-9"
+						>
+							<svg
+								viewBox="0 0 24 24"
+								xmlns="http://www.w3.org/2000/svg"
+								fill="currentColor"
+								class="size-5 2xl:size-6"
+								aria-label="Facebook icon"
+								role="img"
+							>
+								<title>Facebook</title>
+								<path
+									d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"
+								/>
+							</svg>
+						</a>
+						<a
+							href=""
+							class="size-8 inline-grid place-items-center bg-zinc-900 rounded-full 2xl:size-9"
+						>
+							<svg
+								viewBox="0 0 24 24"
+								fill="none"
+								xmlns="http://www.w3.org/2000/svg"
+								class="size-5 2xl:size-6"
+								aria-hidden="true"
+							>
+								<path
+									fill-rule="evenodd"
+									clip-rule="evenodd"
+									d="M12 18C15.3137 18 18 15.3137 18 12C18 8.68629 15.3137 6 12 6C8.68629 6 6 8.68629 6 12C6 15.3137 8.68629 18 12 18ZM12 16C14.2091 16 16 14.2091 16 12C16 9.79086 14.2091 8 12 8C9.79086 8 8 9.79086 8 12C8 14.2091 9.79086 16 12 16Z"
+									fill="currentColor"
+								/>
+								<path
+									d="M18 5C17.4477 5 17 5.44772 17 6C17 6.55228 17.4477 7 18 7C18.5523 7 19 6.55228 19 6C19 5.44772 18.5523 5 18 5Z"
+									fill="currentColor"
+								/>
+								<path
+									fill-rule="evenodd"
+									clip-rule="evenodd"
+									d="M1.65396 4.27606C1 5.55953 1 7.23969 1 10.6V13.4C1 16.7603 1 18.4405 1.65396 19.7239C2.2292 20.8529 3.14708 21.7708 4.27606 22.346C5.55953 23 7.23969 23 10.6 23H13.4C16.7603 23 18.4405 23 19.7239 22.346C20.8529 21.7708 21.7708 20.8529 22.346 19.7239C23 18.4405 23 16.7603 23 13.4V10.6C23 7.23969 23 5.55953 22.346 4.27606C21.7708 3.14708 20.8529 2.2292 19.7239 1.65396C18.4405 1 16.7603 1 13.4 1H10.6C7.23969 1 5.55953 1 4.27606 1.65396C3.14708 2.2292 2.2292 3.14708 1.65396 4.27606ZM13.4 3H10.6C8.88684 3 7.72225 3.00156 6.82208 3.0751C5.94524 3.14674 5.49684 3.27659 5.18404 3.43597C4.43139 3.81947 3.81947 4.43139 3.43597 5.18404C3.27659 5.49684 3.14674 5.94524 3.0751 6.82208C3.00156 7.72225 3 8.88684 3 10.6V13.4C3 15.1132 3.00156 16.2777 3.0751 17.1779C3.14674 18.0548 3.27659 18.5032 3.43597 18.816C3.81947 19.5686 4.43139 20.1805 5.18404 20.564C5.49684 20.7234 5.94524 20.8533 6.82208 20.9249C7.72225 20.9984 8.88684 21 10.6 21H13.4C15.1132 21 16.2777 20.9984 17.1779 20.9249C18.0548 20.8533 18.5032 20.7234 18.816 20.564C19.5686 20.1805 20.1805 19.5686 20.564 18.816C20.7234 18.5032 20.8533 18.0548 20.9249 17.1779C20.9984 16.2777 21 15.1132 21 13.4V10.6C21 8.88684 20.9984 7.72225 20.9249 6.82208C20.8533 5.94524 20.7234 5.49684 20.564 5.18404C20.1805 4.43139 19.5686 3.81947 18.816 3.43597C18.5032 3.27659 18.0548 3.14674 17.1779 3.0751C16.2777 3.00156 15.1132 3 13.4 3Z"
+									fill="currentColor"
+								/>
+							</svg>
+						</a>
+						<a
+							href=""
+							class="size-8 inline-grid place-items-center bg-zinc-900 rounded-full 2xl:size-9"
+						>
+							<svg
+								viewBox="0 -3 20 20"
+								xmlns="http://www.w3.org/2000/svg"
+								class="size-5 2xl:size-6"
+							>
+								<g
+									fill="none"
+									fill-rule="evenodd"
+									stroke="none"
+									stroke-width="1"
+								>
+									<g
+										transform="translate(-300 -7442)"
+										fill="currentColor"
+									>
+										<g transform="translate(56 160)">
+											<path
+												d="M251.988432,7291.58588 L251.988432,7285.97425 
+                 C253.980638,7286.91168 255.523602,7287.8172 257.348463,7288.79353 
+                 C255.843351,7289.62824 253.980638,7290.56468 251.988432,7291.58588 
+                 M263.090998,7283.18289 
+                 C262.747343,7282.73013 262.161634,7282.37809 261.538073,7282.26141 
+                 C259.705243,7281.91336 248.270974,7281.91237 246.439141,7282.26141 
+                 C245.939097,7282.35515 245.493839,7282.58153 245.111335,7282.93357 
+                 C243.49964,7284.42947 244.004664,7292.45151 244.393145,7293.75096 
+                 C244.556505,7294.31342 244.767679,7294.71931 245.033639,7294.98558 
+                 C245.376298,7295.33761 245.845463,7295.57995 246.384355,7295.68865 
+                 C247.893451,7296.0008 255.668037,7296.17532 261.506198,7295.73552 
+                 C262.044094,7295.64178 262.520231,7295.39147 262.895762,7295.02447 
+                 C264.385932,7293.53455 264.28433,7285.06174 263.090998,7283.18289"
+											/>
+										</g>
+									</g>
+								</g>
+							</svg>
+						</a>
+					</div>
+				</div>
+				<div class="md:basis-1/5">
+					<h5 class="font-medium mb-3.5">প্রয়োজনীয় লিঙ্ক</h5>
+					<ul>
+						<li class="menu-item">
+							<a href="land.html">
+								<svg
+									xmlns="http://www.w3.org/2000/svg"
+									viewBox="0 0 24 24"
+									fill="none"
+									stroke="currentColor"
+									stroke-linecap="round"
+									stroke-linejoin="round"
+									stroke-width="2"
+								>
+									<path d="M12 8L18 5L12 2v10" />
+									<path
+										d="M8 11.99L2.5 15.13a1 1 0 0 0 0 1.74l8.5 4.86a2 2 0 0 0 2 0l8.5-4.86a1 1 0 0 0 0-1.74L16 12"
+									/>
+									<path d="M6.49 12.85l11.02 6.3" />
+									<path d="M17.51 12.85L6.5 19.15" />
+								</svg>
+								জমি
+							</a>
+						</li>
+						<li class="menu-item">
+							<a href="flat.html">
+								<svg
+									xmlns="http://www.w3.org/2000/svg"
+									viewBox="0 0 48 48"
+									fill="none"
+								>
+									<path
+										fill="currentColor"
+										fill-rule="evenodd"
+										clip-rule="evenodd"
+										d="M8 43C8 42.4477 8.44772 42 9 42H39C39.5523 42 40 42.4477 40 43C40 43.5523 39.5523 44 39 44H9C8.44772 44 8 43.5523 8 43Z"
+									/>
+									<path
+										fill="currentColor"
+										fill-rule="evenodd"
+										clip-rule="evenodd"
+										d="M12 22V42H17V22H12ZM11 20C10.4477 20 10 20.4477 10 21V43C10 43.5523 10.4477 44 11 44H18C18.5523 44 19 43.5523 19 43V21C19 20.4477 18.5523 20 18 20H11Z"
+									/>
+									<path
+										fill="currentColor"
+										fill-rule="evenodd"
+										clip-rule="evenodd"
+										d="M17 4L33 10V24H28C27.4477 24 27 24.4477 27 25V42H17V4ZM20 13H22V15H20V13ZM26 13H24V15H26V13ZM28 13H30V15H28V13ZM22 17H20V19H22V17ZM24 17H26V19H24V17ZM30 17H28V19H30V17ZM20 21H22V23H20V21ZM26 21H24V23H26V21ZM28 21H30V23H28V21ZM22 25H20V27H22V25ZM24 25H26V27H24V25ZM20 29H22V31H20V29ZM26 29H24V31H26V29ZM22 33H20V35H22V33ZM24 33H26V35H24V33ZM20 37H22V39H20V37ZM26 37H24V39H26V37Z"
+									/>
+									<path
+										fill="currentColor"
+										fill-rule="evenodd"
+										clip-rule="evenodd"
+										d="M29 26V42H36V26H29ZM28 24C27.4477 24 27 24.4477 27 25V43C27 43.5523 27.4477 44 28 44H37C37.5523 44 38 43.5523 38 43V25C38 24.4477 37.5523 24 37 24H28Z"
+									/>
+									<path
+										fill="currentColor"
+										fill-rule="evenodd"
+										clip-rule="evenodd"
+										d="M34 30H31V28H34V30ZM34 34H31V32H34V34ZM34 38H31V36H34V38ZM34 42H31V40H34V42ZM15 13L15 21H13L13 13H15Z"
+									/>
+								</svg>
+								ফ্ল্যাট
+							</a>
+						</li>
+						<li class="menu-item">
+							<a href="services.html">
+								<svg
+									viewBox="0 0 32 32"
+									fill="none"
+									xmlns="http://www.w3.org/2000/svg"
+								>
+									<circle
+										cx="11.9"
+										cy="20.1"
+										r="5.8"
+										stroke="currentColor"
+										stroke-width="2"
+										stroke-miterlimit="10"
+									/>
+									<line
+										x1="3.9"
+										y1="23.4"
+										x2="6.6"
+										y2="22.3"
+										stroke="currentColor"
+										stroke-width="2"
+										stroke-miterlimit="10"
+									/>
+									<line
+										x1="17.2"
+										y1="17.9"
+										x2="19.9"
+										y2="16.8"
+										stroke="currentColor"
+										stroke-width="2"
+										stroke-miterlimit="10"
+									/>
+									<line
+										x1="8.6"
+										y1="12.1"
+										x2="9.7"
+										y2="14.8"
+										stroke="currentColor"
+										stroke-width="2"
+										stroke-miterlimit="10"
+									/>
+									<line
+										x1="14.1"
+										y1="25.4"
+										x2="15.2"
+										y2="28.1"
+										stroke="currentColor"
+										stroke-width="2"
+										stroke-miterlimit="10"
+									/>
+									<line
+										x1="3.9"
+										y1="16.8"
+										x2="6.6"
+										y2="17.9"
+										stroke="currentColor"
+										stroke-width="2"
+										stroke-miterlimit="10"
+									/>
+									<line
+										x1="17.2"
+										y1="22.3"
+										x2="19.9"
+										y2="23.4"
+										stroke="currentColor"
+										stroke-width="2"
+										stroke-miterlimit="10"
+									/>
+									<line
+										x1="15.2"
+										y1="12.1"
+										x2="14.1"
+										y2="14.8"
+										stroke="currentColor"
+										stroke-width="2"
+										stroke-miterlimit="10"
+									/>
+									<line
+										x1="9.7"
+										y1="25.4"
+										x2="8.6"
+										y2="28.1"
+										stroke="currentColor"
+										stroke-width="2"
+										stroke-miterlimit="10"
+									/>
+									<circle
+										cx="22.5"
+										cy="9.5"
+										r="4.7"
+										stroke="currentColor"
+										stroke-width="2"
+										stroke-miterlimit="10"
+									/>
+									<line
+										x1="17.5"
+										y1="14.5"
+										x2="19.2"
+										y2="12.8"
+										stroke="currentColor"
+										stroke-width="2"
+										stroke-miterlimit="10"
+									/>
+									<line
+										x1="25.8"
+										y1="6.2"
+										x2="27.4"
+										y2="4.6"
+										stroke="currentColor"
+										stroke-width="2"
+										stroke-miterlimit="10"
+									/>
+									<line
+										x1="17.5"
+										y1="4.6"
+										x2="19.2"
+										y2="6.2"
+										stroke="currentColor"
+										stroke-width="2"
+										stroke-miterlimit="10"
+									/>
+									<line
+										x1="25.8"
+										y1="12.8"
+										x2="27.4"
+										y2="14.5"
+										stroke="currentColor"
+										stroke-width="2"
+										stroke-miterlimit="10"
+									/>
+									<line
+										x1="15.5"
+										y1="9.5"
+										x2="17.8"
+										y2="9.5"
+										stroke="currentColor"
+										stroke-width="2"
+										stroke-miterlimit="10"
+									/>
+									<line
+										x1="27.2"
+										y1="9.5"
+										x2="29.5"
+										y2="9.5"
+										stroke="currentColor"
+										stroke-width="2"
+										stroke-miterlimit="10"
+									/>
+									<line
+										x1="22.5"
+										y1="2.5"
+										x2="22.5"
+										y2="4.8"
+										stroke="currentColor"
+										stroke-width="2"
+										stroke-miterlimit="10"
+									/>
+									<line
+										x1="22.5"
+										y1="14.2"
+										x2="22.5"
+										y2="16.5"
+										stroke="currentColor"
+										stroke-width="2"
+										stroke-miterlimit="10"
+									/>
+								</svg>
+								সেবাসমূহ
+							</a>
+						</li>
+						<li class="menu-item">
+							<a href="about.html">
+								<svg
+									viewBox="0 0 24 24"
+									fill="none"
+									xmlns="http://www.w3.org/2000/svg"
+								>
+									<path
+										d="M12.4545 7.5C12.4545 8.1778 11.905 8.72727 11.2272 8.72727C10.5494 8.72727 9.99996 8.1778 9.99996 7.5C9.99996 6.82219 10.5494 6.27273 11.2272 6.27273C11.905 6.27273 12.4545 6.82219 12.4545 7.5Z"
+										fill="currentColor"
+									/>
+									<path
+										d="M10 11L12 11L12 16L14 16"
+										stroke="currentColor"
+										stroke-width="2"
+										stroke-linecap="round"
+										stroke-linejoin="round"
+									/>
+									<path
+										d="M20 12C20 16.4183 16.4183 20 12 20C7.58172 20 4 16.4183 4 12C4 7.58172 7.58172 4 12 4C16.4183 4 20 7.58172 20 12Z"
+										stroke="currentColor"
+										stroke-width="2"
+									/>
+								</svg>
+								আমাদের সম্পর্কে
+							</a>
+						</li>
+						<li class="menu-item">
+							<a href="contact.html">
+								<svg
+									xmlns="http://www.w3.org/2000/svg"
+									viewBox="0 0 64 64"
+									fill="currentColor"
+								>
+									<path
+										d="M37.063 18.062h-.06c-.552 0-.97.448-.97 1s.478 1 1.03 1 1-.448 1-1-.448-1-1-1z"
+									/>
+									<path
+										d="M45.179 18.062h-.056c-.552 0-.972.448-.972 1s.476 1 1.028 1 1-.448 1-1-.448-1-1-1z"
+									/>
+									<path
+										d="M53.298 18.062h-.06c-.552 0-.97.448-.97 1s.478 1 1.03 1 1-.448 1-1-.448-1-1-1z"
+									/>
+									<path
+										d="M45.195 45.927c-5.15-2.904-6.692-2.667-10.617-.447-2.015 1.339-4.44.522-8.656-2.911a63.59 63.59 0 0 1-4.703-4.705c-3.178-3.9-4.044-7.459-3.011-8.532 3.042-3.271 2.352-5.957-.334-10.717-1.617-3.06-3.393-6.104-5.757-6.803-1.714-.503-4.26.815-5.017 1.319-1.95 1.298-3.8 3.594-4.831 5.994-1.896 4.414-1.393 9.733-.29 13.24 1.812 5.749 6.161 12.406 11.635 17.809 5.404 5.476 12.062 9.824 17.808 11.631 1.816.573 4.117.984 6.528.984 2.244 0 4.583-.356 6.713-1.271 2.399-1.033 4.694-2.884 5.989-4.83.504-.756 1.828-3.3 1.318-5.021-1.012-3.47-4.057-5.247-7.092-6.85zM44.237 47.682c1.852.979 5.3 2.802 5.815 4.551.106.356-.023 1.006-.26 1.681l-13.53-7.089c2.545-1.409 3.575-1.624 7.975.857zM11.551 13.731c1.752.518 3.575 3.966 4.568 5.843 2.62 4.647 2.612 6.113.927 8.058L9.748 14.036c.556-.206 1.105-.342 1.5-.342.116 0 .219.012.303.037zM43.873 59.681c-3.918 1.684-8.831 1.169-11.85.216-5.452-1.714-11.804-5.877-16.99-11.133l-.01-.01c-5.244-5.244-9.407-11.596-11.126-17.05-.95-3.02-1.462-7.935.22-11.85.844-1.965 2.312-3.83 3.87-4.949l7.923 14.762c-.437 2.373.919 5.904 3.768 9.4a63.46 63.46 0 0 0 4.99 4.992c3.088 2.515 6.33 4.626 9.367 3.791l14.871 7.792c-1.955 1.438-3.861 2.954-5.871 3.819z"
+									/>
+									<path
+										d="M60.955 10.771c-4.57-8.712-15.378-12.082-24.093-7.514-8.712 4.572-12.083 15.381-7.514 24.095.331.631.709 1.255 1.127 1.861l-2.701 4.63a1.001 1.001 0 0 0 .952 1.5l7.75-.685a19.68 19.68 0 0 0 8.675 2.263 19.6 19.6 0 0 0 8.293-2.055c8.713-4.57 12.083-15.379 7.513-24.094zM52.513 33.095c-4.847 2.543-10.572 2.421-15.316-.325a1 1 0 0 0-.589-.131l-6.134.542 2.054-3.519a1.002 1.002 0 0 0-.061-1.1 19.444 19.444 0 0 1-1.349-2.138c-4.057-7.737-1.064-17.335 6.672-21.396 7.738-4.058 17.336-1.064 21.395 6.672 4.058 7.737 1.064 17.335-6.672 21.395z"
+									/>
+								</svg>
+								যোগাযোগ
+							</a>
+						</li>
+					</ul>
+				</div>
+				<div class="md:basis-1/5">
+					<h5 class="font-medium mb-3.5">ইমেইল পাঠান</h5>
+					<div>
+						<a
+							href="mailto:hello@attalika.com"
+							class="relative inline-block ms-(--sectionGap) mb-2 after:content-[''] after:absolute after:w-full after:h-px after:bg-zinc-900 after:-bottom-0 after:left-0 after:scale-x-0 after:origin-left after:transition-transform after:duration-600 after:ease-[cubic-bezier(0.85,0,0.15,1)] hover:after:scale-x-100 hover:after:origin-left"
+						>
+							<h6 class="inline-block">hello@attalika.com</h6>
+						</a>
+						<a
+							href="mailto:contact@attalika.com"
+							class="relative inline-block ms-(--sectionGap) mb-2 after:content-[''] after:absolute after:w-full after:h-px after:bg-zinc-900 after:-bottom-0 after:left-0 after:scale-x-0 after:origin-left after:transition-transform after:duration-600 after:ease-[cubic-bezier(0.85,0,0.15,1)] hover:after:scale-x-100 hover:after:origin-left"
+						>
+							<h6 class="inline-block">contact@attalika.com</h6>
+						</a>
+					</div>
+				</div>
+			</div>
+			<div class="text-white bg-zinc-900">
+				<p class="text-sm text-center py-2">
+					© ২০২৫ অট্টালিকা। সর্বস্বত্ব সংরক্ষিত।
+				</p>
+			</div>
+		</footer>
+
+		<!-- Lenis Script -->
+		<script src="js/lenis.min.js"></script>
+		<!-- Gsap Script -->
+		<script src="js/gsap.min.js"></script>
+		<!-- Gsap ScrollTrigger Script -->
+		<script src="js/ScrollTrigger.min.js"></script>
+		<!-- Gsap SplitText Script -->
+		<script src="js/SplitText.min.js"></script>
+		<!-- Swiper Script -->
+		<script src="js/swiper-bundle.min.js"></script>
+		<!-- Main Script -->
+		<script src="js/script.js"></script>
+	</body>
+</html>

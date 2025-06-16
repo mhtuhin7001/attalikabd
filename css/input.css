@@ -83,20 +83,20 @@ header nav ul > .menu-item:last-child a svg {
 	@apply lg:hidden;
 }
 
-/* Properties */
-#properties #filter-btns button svg {
-	@apply size-6;
-}
-#properties .property #property-details svg {
-	@apply size-4;
-}
-
 /* Footer */
 footer ul .menu-item a {
 	@apply flex gap-1.5 ms-(--sectionGap) mb-2 py-1 border-b-1 border-b-[#0000008d];
 }
 footer ul .menu-item a svg {
 	@apply size-5;
+}
+
+/* Properties */
+#properties #filter-btns button svg {
+	@apply size-6;
+}
+#properties .property #property-details svg {
+	@apply size-4;
 }
 
 /* Fonts */

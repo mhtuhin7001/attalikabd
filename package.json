@@ -1,5 +1,5 @@
 {
-	"name": "attalikabd",
+	"name": "new-folder",
 	"version": "1.0.0",
 	"main": "index.js",
 	"scripts": {
@@ -12,10 +12,10 @@
 	"license": "ISC",
 	"description": "",
 	"dependencies": {
-		"@tailwindcss/postcss": "^4.1.7",
+		"@tailwindcss/postcss": "^4.1.10",
 		"autoprefixer": "^10.4.21",
-		"postcss": "^8.5.3",
-		"tailwindcss": "^4.1.7",
+		"postcss": "^8.5.5",
+		"tailwindcss": "^4.1.10",
 		"vite": "^6.3.5"
 	}
 }
