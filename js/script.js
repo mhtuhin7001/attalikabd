@@ -66,3 +66,30 @@ document.addEventListener("DOMContentLoaded", () => {
 		});
 	}
 });
+
+// Convert English digits to Bangla digits
+function toBanglaNumber(num) {
+	const banglaDigits = ["০", "১", "২", "৩", "৪", "৫", "৬", "৭", "৮", "৯"];
+	return String(num).replace(/\d/g, (d) => banglaDigits[d]);
+}
+// Achievements Counter
+document.addEventListener("DOMContentLoaded", () => {
+	document.querySelectorAll("#achieve-numbers h2").forEach((el) => {
+		const target = +el.getAttribute("data-target");
+		const obj = { val: 0 };
+		gsap.to(obj, {
+			val: target,
+			duration: 3,
+			ease: "power2.out",
+			scrollTrigger: {
+				trigger: "#achievements",
+				start: "top 70%",
+			},
+			onUpdate: () => {
+				const rounded = Math.floor(obj.val);
+				el.textContent =
+					toBanglaNumber(rounded.toLocaleString("en-US")) + "+";
+			},
+		});
+	});
+});
