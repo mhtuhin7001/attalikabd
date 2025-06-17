@@ -21,6 +21,7 @@ h5 {
 	@apply text-[clamp(1rem,calc(1vw+0.5rem),2rem)];
 }
 h6,
+p,
 header nav li a,
 #filter-btns button {
 	@apply text-[clamp(.9rem,calc(1vw+0.20rem),1.5rem)];
