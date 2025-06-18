@@ -432,7 +432,6 @@
 					এখন হাতের নাগালে
 				</h1>
 				<form
-					action=""
 					class="relative flex w-full bg-white mx-auto mt-4 rounded-full xl:mt-7 2xl:w-2/3"
 				>
 					<input
@@ -1786,6 +1785,82 @@
 			</div>
 		</section>
 
+		<!-- Achievements -->
+		<section id="achievements" class="p-(--sectionGap) md:flex md:gap-6">
+			<div class="mb-6 md:basis-1/2 md:mb-0">
+				<h2 class="text-center font-semibold mb-4 md:text-start">
+					আপনার স্বপ্নপূরণের অংশ হতে পারাই আমাদের সবচেয়ে বড় সাফল্য
+				</h2>
+				<div id="achieve-numbers" class="grid grid-cols-2 gap-2.5">
+					<div
+						class="flex flex-col bg-zinc-300 p-4 rounded-xl justify-center items-center 2xl:p-6"
+					>
+						<h2 class="font-medium" data-target="50">০</h2>
+						<p class="opacity-70">জমি আছে</p>
+					</div>
+					<div
+						class="row-span-2 flex flex-col text-white bg-zinc-900 p-4 rounded-xl justify-center items-center 2xl:p-6"
+					>
+						<h2 class="font-medium" data-target="90">০</h2>
+						<p class="opacity-70">বিশ্বস্ত গ্রাহক</p>
+					</div>
+					<div
+						class="flex flex-col bg-zinc-300 p-4 rounded-xl justify-center items-center 2xl:p-6"
+					>
+						<h2 class="font-medium" data-target="150">০</h2>
+						<p class="opacity-70">ফ্লাট আছে</p>
+					</div>
+				</div>
+			</div>
+			<div class="basis-1/2 flex flex-col gap-4">
+				<p class="md:ms-[20%]">
+					আমরা শুধু প্রপার্টি বিক্রি করি না—আমরা আপনাদের স্বপ্নের
+					ঠিকানা গড়তে সহায়তা করি। আপনার সন্তুষ্টিই আমাদের সবচেয়ে বড়
+					অর্জন।
+				</p>
+				<div
+					class="h-full flex bg-zinc-300 p-3 gap-2.5 rounded-xl 2xl:p-6"
+				>
+					<div
+						class="basis-1/2 flex flex-col justify-between gap-2.5"
+					>
+						<p>
+							বিশ্বাস, পেশাদারিত্ব ও মানসম্পন্ন সেবার মাধ্যমে আমরা
+							আপনার জন্য খুঁজে দিই সঠিক ঠিকানা।
+						</p>
+						<a
+							href="contact.html"
+							class="inline-grid size-8 text-white bg-zinc-900 place-items-center rounded-full md:size-12"
+						>
+							<svg
+								xmlns="http://www.w3.org/2000/svg"
+								fill="none"
+								viewBox="0 0 24 24"
+								stroke-width="1.5"
+								stroke="currentColor"
+								class="size-4 md:size-5"
+							>
+								<path
+									stroke-linecap="round"
+									stroke-linejoin="round"
+									d="m4.5 19.5 15-15m0 0H8.25m11.25 0v11.25"
+								/>
+							</svg>
+						</a>
+					</div>
+					<div class="basis-1/2">
+						<video
+							muted
+							autoplay
+							loop
+							src="assets/media/hero-full.mp4"
+							class="size-full object-cover rounded-lg"
+						></video>
+					</div>
+				</div>
+			</div>
+		</section>
+
 		<!-- Cities -->
 		<section id="cities" class="py-(--sectionGap)">
 			<div
@@ -2464,7 +2539,7 @@
 				);
 				// Hero Search
 				gsapTl.from(
-					"#hero-home form",
+					"#hero form",
 					{
 						width: 0,
 						x: 25,
@@ -2676,52 +2751,45 @@
 				showFirstItems();
 			});
 
-			// Initialize Slider
-			document.addEventListener("DOMContentLoaded", () => {
-				function initializeSwiper(selector) {
-					return new Swiper(selector, {
-						freeMode: true,
-						loop: true,
-						speed: 7000,
-						spaceBetween: 30,
-						autoplay: {
-							delay: 0,
-							pauseOnMouseEnter: true,
-						},
-						breakpoints: {
-							0: {
-								slidesPerView: 1,
-							},
-							640: {
-								slidesPerView: 2,
-							},
-							1280: {
-								slidesPerView: 3,
-							},
-							1536: {
-								slidesPerView: 4,
-								spaceBetween: 40,
-							},
-						},
-					});
-				}
-
-				// Initialize Sliders
-				initializeSwiper(".citySlider");
-			});
-
-			// On Hover Video Play
+			// Convert English digits to Bangla digits
+			function toBanglaNumber(num) {
+				const banglaDigits = [
+					"০",
+					"১",
+					"২",
+					"৩",
+					"৪",
+					"৫",
+					"৬",
+					"৭",
+					"৮",
+					"৯",
+				];
+				return String(num).replace(/\d/g, (d) => banglaDigits[d]);
+			}
+			// Achievements Counter
 			document.addEventListener("DOMContentLoaded", () => {
 				document
-					.querySelectorAll(".citySlider video")
-					.forEach((video) => {
-						video.addEventListener("mouseenter", () => {
-							video.currentTime = 0;
-							video.play();
+					.querySelectorAll("#achieve-numbers h2")
+					.forEach((el) => {
+						const target = +el.getAttribute("data-target");
+						const obj = { val: 0 };
+						gsap.to(obj, {
+							val: target,
+							duration: 3,
+							ease: "power2.out",
+							scrollTrigger: {
+								trigger: "#achievements",
+								start: "top center",
+							},
+							onUpdate: () => {
+								const rounded = Math.floor(obj.val);
+								el.textContent =
+									toBanglaNumber(
+										rounded.toLocaleString("en-US")
+									) + "+";
+							},
 						});
-						video.addEventListener("mouseleave", () =>
-							video.pause()
-						);
 					});
 			});
 		</script>

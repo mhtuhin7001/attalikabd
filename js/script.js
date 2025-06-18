@@ -67,29 +67,47 @@ document.addEventListener("DOMContentLoaded", () => {
 	}
 });
 
-// Convert English digits to Bangla digits
-function toBanglaNumber(num) {
-	const banglaDigits = ["০", "১", "২", "৩", "৪", "৫", "৬", "৭", "৮", "৯"];
-	return String(num).replace(/\d/g, (d) => banglaDigits[d]);
-}
-// Achievements Counter
+// Initialize Slider
 document.addEventListener("DOMContentLoaded", () => {
-	document.querySelectorAll("#achieve-numbers h2").forEach((el) => {
-		const target = +el.getAttribute("data-target");
-		const obj = { val: 0 };
-		gsap.to(obj, {
-			val: target,
-			duration: 3,
-			ease: "power2.out",
-			scrollTrigger: {
-				trigger: "#achievements",
-				start: "top 70%",
+	function initializeSwiper(selector) {
+		return new Swiper(selector, {
+			freeMode: true,
+			loop: true,
+			speed: 7000,
+			spaceBetween: 30,
+			autoplay: {
+				delay: 0,
+				pauseOnMouseEnter: true,
 			},
-			onUpdate: () => {
-				const rounded = Math.floor(obj.val);
-				el.textContent =
-					toBanglaNumber(rounded.toLocaleString("en-US")) + "+";
+			breakpoints: {
+				0: {
+					slidesPerView: 1,
+				},
+				640: {
+					slidesPerView: 2,
+				},
+				1280: {
+					slidesPerView: 3,
+				},
+				1536: {
+					slidesPerView: 4,
+					spaceBetween: 40,
+				},
 			},
 		});
+	}
+
+	// Initialize Sliders
+	initializeSwiper(".citySlider");
+});
+
+// On Hover Video Play
+document.addEventListener("DOMContentLoaded", () => {
+	document.querySelectorAll(".citySlider video").forEach((video) => {
+		video.addEventListener("mouseenter", () => {
+			video.currentTime = 0;
+			video.play();
+		});
+		video.addEventListener("mouseleave", () => video.pause());
 	});
 });

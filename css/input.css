@@ -3,6 +3,15 @@
 @theme {
 	--font-bangla: "Anek Bangla", sans-serif;
 	--sectionGap: clamp(1rem, 5%, 6rem);
+	--animate-marquee: marquee 8s linear infinite;
+	@keyframes marquee {
+		0% {
+			transform: translateX(0);
+		}
+		100% {
+			transform: translateX(-100%);
+		}
+	}
 }
 
 h1 {
