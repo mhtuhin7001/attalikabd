@@ -115,6 +115,10 @@ footer ul .menu-item a svg {
 #properties .property #property-details svg {
 	@apply size-4;
 }
+/* Property Details */
+#property-gallary .property-thumb .swiper-slide.swiper-slide-thumb-active {
+	@apply opacity-100;
+}
 
 /* Fonts */
 @font-face {
