@@ -13,6 +13,12 @@
 		}
 	}
 }
+@layer base {
+	input[type="number"]::-webkit-inner-spin-button,
+	input[type="number"]::-webkit-outer-spin-button {
+		-webkit-appearance: none;
+	}
+}
 
 h1 {
 	@apply text-[clamp(1.5rem,calc(3vw+1rem),5.7rem)] leading-[clamp(2rem,calc(3vw+1.5rem),6.2rem)];
@@ -32,6 +38,7 @@ h5 {
 h6,
 p,
 a,
+#property-details ul li,
 header nav li a,
 #filter-btns button {
 	@apply text-[clamp(.9rem,calc(1vw+0.20rem),1.5rem)];
@@ -112,12 +119,21 @@ footer ul .menu-item a svg {
 #properties #filter-btns button svg {
 	@apply size-6;
 }
-#properties .property #property-details svg {
+#property-sizes svg {
 	@apply size-4;
 }
-/* Property Details */
+
+/* Property Gallary */
 #property-gallary .property-thumb .swiper-slide.swiper-slide-thumb-active {
 	@apply opacity-100;
+}
+
+/* Property Details */
+#property-details input[type="date"].date-scheduled {
+	@apply before:hidden after:hidden;
+}
+#property-details #features svg {
+	@apply size-6;
 }
 
 /* Fonts */
