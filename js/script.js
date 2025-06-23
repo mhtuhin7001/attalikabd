@@ -111,3 +111,15 @@ document.addEventListener("DOMContentLoaded", () => {
 		video.addEventListener("mouseleave", () => video.pause());
 	});
 });
+
+// BG Parallax Effect
+document.addEventListener("DOMContentLoaded", () => {
+	gsap.to("#jump-to", {
+		backgroundPosition: `50% ${-innerHeight / 2}px`,
+		duration: 6,
+		scrollTrigger: {
+			trigger: "#jump-to",
+			scrub: 4,
+		},
+	});
+});

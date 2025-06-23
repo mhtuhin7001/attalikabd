@@ -38,9 +38,11 @@ h5 {
 h6,
 p,
 a,
+li,
 #property-details ul li,
 header nav li a,
-#filter-btns button {
+#filter-btns button,
+#services #services-lists .service-list::before {
 	@apply text-[clamp(.9rem,calc(1vw+0.20rem),1.5rem)];
 }
 
@@ -63,6 +65,7 @@ html.lenis body {
 	transition-duration: 1ms;
 	transition-behavior: allow-discrete;
 }
+
 /* Split Text */
 .lineParent {
 	@apply overflow-hidden max-w-max mx-auto;
@@ -103,7 +106,7 @@ header nav ul > .menu-item:last-child a svg {
 
 /* Footer */
 footer ul .menu-item a {
-	@apply flex gap-1.5 ms-(--sectionGap) mb-2 py-1 border-b-1 border-b-[#0000008d];
+	@apply flex gap-1.5 ms-(--sectionGap) mb-2 py-1 border-b-1 border-b-zinc-500;
 }
 footer ul .menu-item a svg {
 	@apply size-5;
@@ -134,6 +137,15 @@ footer ul .menu-item a svg {
 }
 #property-details #features svg {
 	@apply size-6;
+}
+
+/* Services */
+#services #services-lists {
+	counter-reset: servicesList;
+}
+#services #services-lists .service-list::before {
+	content: "(0" counter(servicesList) ")";
+	counter-increment: servicesList;
 }
 
 /* Fonts */
