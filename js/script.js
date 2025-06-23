@@ -115,8 +115,7 @@ document.addEventListener("DOMContentLoaded", () => {
 // BG Parallax Effect
 document.addEventListener("DOMContentLoaded", () => {
 	gsap.to("#jump-to", {
-		backgroundPosition: `50% ${-innerHeight / 2}px`,
-		duration: 6,
+		backgroundPosition: `50% ${-innerHeight / 3}px`,
 		scrollTrigger: {
 			trigger: "#jump-to",
 			scrub: 4,
