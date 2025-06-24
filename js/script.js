@@ -8,7 +8,7 @@ document.addEventListener("DOMContentLoaded", () => {
 	requestAnimationFrame(raf);
 });
 
-// Register Gsap Plugin
+// Register Gsap Plugins
 gsap.registerPlugin(ScrollTrigger, SplitText);
 
 // Main Menu
@@ -115,7 +115,7 @@ document.addEventListener("DOMContentLoaded", () => {
 // BG Parallax Effect
 document.addEventListener("DOMContentLoaded", () => {
 	gsap.to("#jump-to", {
-		backgroundPosition: `50% ${-innerHeight / 3}px`,
+		backgroundPosition: `50% ${-innerHeight / 4}px`,
 		scrollTrigger: {
 			trigger: "#jump-to",
 			scrub: 4,

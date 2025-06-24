@@ -39,9 +39,9 @@ h6,
 p,
 a,
 li,
+button,
 #property-details ul li,
 header nav li a,
-#filter-btns button,
 #services #services-lists .service-list::before {
 	@apply text-[clamp(.9rem,calc(1vw+0.20rem),1.5rem)];
 }
